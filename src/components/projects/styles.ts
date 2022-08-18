@@ -1,12 +1,18 @@
 import styled from 'styled-components';
 
 export const Container = styled.section`
-    height: 100vh;
-    margin-top: 10%;
-    display: flex;
-    flex-direction: column;
+  margin-top: 5%;
+  width: 100%;
+  display: flex;
+  margin-bottom: 5%;
+`;
 
-    .title {
-        color: '#fff'
-    }
+export const CardContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1;
 `;

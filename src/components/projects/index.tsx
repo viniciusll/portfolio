@@ -1,8 +1,9 @@
-import { Container } from "./styles";
+import { Container, CardContainer } from "./styles";
+import { Card } from "./card";
 
 const myProjects = [
   {
-    name: "Avaliacao-Tecninca-Frontend",
+    name: "Store",
     description: "In this project I created an e-commerce for front-end technical evaluation.",
     technologies: [
       {
@@ -10,7 +11,9 @@ const myProjects = [
         image: ""
       }
     ],
-    image: ""
+    image: "https://user-images.githubusercontent.com/40804611/185440873-ac61db40-3f3b-40db-8671-e9ab2d4343da.png",
+    linkWebsite: "https://avaliacao-tecninca-frontend-a7c760n97-viniciusll.vercel.app/",
+    linkRepository: "https://github.com/viniciusll/store/tree/main"
   },
   {
     name: "Food Delivery",
@@ -25,7 +28,9 @@ const myProjects = [
         image: ""
       }
     ],
-    image: ""
+    image: "",
+    linkWebsite: "https://avaliacao-tecninca-frontend-a7c760n97-viniciusll.vercel.app/",
+    linkRepository: "https://avaliacao-tecninca-frontend-a7c760n97-viniciusll.vercel.app/"
   },
   {
     name: "Library api",
@@ -40,31 +45,25 @@ const myProjects = [
         image: ""
       }
     ],
-    image: ""
+    image: "",
+    linkWebsite: "https://avaliacao-tecninca-frontend-a7c760n97-viniciusll.vercel.app/",
+    linkRepository: "https://avaliacao-tecninca-frontend-a7c760n97-viniciusll.vercel.app/"
   },
 ];
 
 const Projects = () => {
     return (
       <Container data-section="projects" id='projects'>
-        <h1 className="title">Projects</h1>
         {myProjects.map(project => (
-          <div className="project-container" key={project.name}>
-            <div className="project-image-container">
-              <img src={project.image} alt={project.name} />
-            </div>
-            <div className="project-body">
-              <div className="project">
-                <h2>{project.name}</h2>
-                <p>{project.description}</p>
-              </div>
-              <div className="technologies">
-                {project.technologies.map((technology, i) => (
-                  <img key={i} src={technology.image} alt={technology.name} />
-                ))}
-              </div>
-            </div>
-          </div>
+          <CardContainer>
+            <Card 
+              title={project.name} 
+              imgUrl={project.image} 
+              description={project.description} 
+              linkRepository={project.linkRepository}
+              linkWebsite={project.linkWebsite}
+            />
+          </CardContainer>
         ))}
       </Container>
     );
